@@ -3,4 +3,26 @@ edify checking utility:
 Validates updater-scripts for function names and parameter count
 depends on bootable/recovery/libedify which should be built for the host
 
+THE VAPOUR-WARE LIST OF POSSIBLE FUTURE FEATURES.
+
+Process update zips,
+Validate Parameter Values
+Simulate block devices/platform devices 
+Simulate partition mounting and unmounting
+Simulate File Permission / executable bit
+Include x86 BusyBox for processing popular run-program functions
+Redirect mount points to local directories to simulate installation
+Set/Provide Build Properties
+Simulate Device Status such as available space etc.
+Provide Arm updater-binary to match the api which is validator
+Register Device Specific Additional Functions
+Error Resolution Suggestions
+
+
+
+
+
+
+
+ 
 
