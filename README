@@ -1,0 +1,6 @@
+edify checking utility:
+
+Validates updater-scripts for function names and parameter count
+depends on bootable/recovery/libedify which should be built for the host
+
+
