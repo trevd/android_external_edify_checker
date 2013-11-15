@@ -41,6 +41,11 @@ int main(int argc, char** argv) {
     //setbuf(stdout, NULL);
     //setbuf(stderr, NULL);
 	fprintf(stdout,"edify syntax checker v0.1\n");
+	if(argc < 2)
+	{
+		printf("\nUsage: %s updater-script\n", argv[0]);
+		exit(1);
+	}
 	char* script_fn = argv[1];
 	struct stat sb;
 	FILE *script_fp = fopen(script_fn,"r"); 
