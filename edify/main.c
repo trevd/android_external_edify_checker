@@ -25,15 +25,12 @@ extern int yyparse(Expr** root, int* error_count);
 
 int expect(const char* expr_str, const char* expected, int* errors) {
     Expr* e;
-    int error;
     char* result;
 
     printf(".");
 
-    yy_scan_string(expr_str);
-    int error_count = 0;
-    error = yyparse(&e, &error_count);
-    if (error > 0 || error_count > 0) {
+    int error_count = parse_string(expr_str, &e, &error_count);
+    if (error_count > 0) {
         printf("error parsing \"%s\" (%d errors)\n",
                expr_str, error_count);
         ++*errors;
@@ -193,8 +190,7 @@ int main(int argc, char** argv) {
 
     Expr* root;
     int error_count = 0;
-    yy_scan_bytes(buffer, size);
-    int error = yyparse(&root, &error_count);
+    int error = parse_string(buffer, &root, &error_count);
     printf("parse returned %d; %d errors encountered\n", error, error_count);
     if (error == 0 || error_count > 0) {
 
